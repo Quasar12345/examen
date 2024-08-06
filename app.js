@@ -125,23 +125,6 @@ app.post("/ingresarPagina", (req, res) => {
 
 
 
-//12 - Método para controlar que está auth en todas las páginas
-app.get("/", (req, res) => {
-  if (req.session.loggedin) {
-    res.render("loging", {
-      login: true,
-      name: req.session.name,
-    });
-  } else {
-    res.render("login", {
-      login: false,
-      name: "Debe iniciar sesión",
-    });
-  }
-  res.end();
-});
-
-
 app.listen(3000, (req, res) => {
   console.log("Servidor Corrindo http://localhost:3000");
 });
