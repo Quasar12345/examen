@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EPMOL</title>
+    <link rel="stylesheet" href="/resources/css/style.css" />
+  </head>
+  <body>
+    <div class="login-form">
+      <img src="/CSS/imagenes/imagenConsola1.png" width="200" height="75" />
+
+      <br />
+      <form action="/ingresarPagina" method="post">
+        <h2>ACCEDER A TIENDA</h2>
+        <input
+          type="text"
+          name="usuario"
+          id="usuario"
+          placeholder="User"
+          required
+        />
+        <input
+          type="password"
+          name="contraseña"
+          id="contraseña"
+          placeholder="Contraseña"
+          required
+        />
+        <input type="submit" class="btn-login" value="Ingresar" />
+      </form>
+      <a href="register" class="btn-register">Register</a>
+    </div>
+
+    <!-- cuadro -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert !="undefined"){%>
+    <script>
+      Swal.fire({
+        title: "<%= alertTitle%>",
+        text: "<%= alertMessage%>",
+        icon: "<%= alertIcon%>",
+        showConfirmButton: "<%= showConfirmButton%>",
+        timer: "<%= timer%>",
+      }).then(() => {
+        window.location = "/<%= ruta%>";
+      });
+    </script>
+    <% } %>
+  </body>
+</html>
